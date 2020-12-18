@@ -41,6 +41,7 @@ func SetLevel(level int) {
 		logger.SetOutput(os.Stdout)
 	}
 
+	//todo 用处存疑
 	if ErrorLevel < level {
 		errorLog.SetOutput(ioutil.Discard)
 		//ioutil.Discard 不执行任何操作，永远返回成功
