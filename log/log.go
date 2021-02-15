@@ -37,11 +37,13 @@ func SetLevel(level int) {
 	mu.Lock()
 	defer mu.Unlock()
 
+	// 该段代码将日志打印到命令行
 	for _, logger := range loggers {
 		logger.SetOutput(os.Stdout)
 	}
 
-	//todo 用处存疑
+	// 该段控制需要输出哪些等级的日志
+	// disabled:均不输出,Errorlevel:只输出错误,InfoLevel:均输出
 	if ErrorLevel < level {
 		errorLog.SetOutput(ioutil.Discard)
 		//ioutil.Discard 不执行任何操作，永远返回成功

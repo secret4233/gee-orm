@@ -17,5 +17,4 @@ func main() {
 	result, _ := s.Raw("INSERT INTO User(`Name`) values (?), (?)", "Tom", "Sam").Exec()
 	count, _ := result.RowsAffected()
 	fmt.Printf("Exec success, %d affected\n", count)
-	fmt.Printf("to test")
 }
