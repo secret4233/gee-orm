@@ -1,4 +1,4 @@
-module github.com/secret4233/geeorm
+module geeorm
 
 go 1.15
 

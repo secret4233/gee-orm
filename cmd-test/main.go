@@ -3,8 +3,9 @@ package main
 import (
 	"fmt"
 
+	"geeorm"
+
 	_ "github.com/mattn/go-sqlite3"
-	"github.com/secret4233/geeorm"
 )
 
 func main() {

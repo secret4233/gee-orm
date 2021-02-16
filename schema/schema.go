@@ -4,7 +4,7 @@ import (
 	"go/ast"
 	"reflect"
 
-	"github.com/secret4233/geeorm/dialect"
+	"geeorm/dialect"
 )
 
 /*
