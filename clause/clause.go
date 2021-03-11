@@ -34,7 +34,7 @@ func (c *Clause) Set(name Type, vars ...interface{}) {
 	c.sqlVars[name] = vars
 }
 
-// sql语句拼接
+// sql语句拼接,拼接成一个合法的句子
 func (c *Clause) Build(orders ...Type) (string, []interface{}) {
 	var sqls []string
 	var vars []interface{}
