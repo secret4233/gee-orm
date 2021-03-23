@@ -5,13 +5,15 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch file",
+            "name": "Launch Package",
             "type": "go",
             "request": "launch",
             "mode": "debug",
-            "program": "${workspaceFolder}",
-            "env": {},
-            "args": []
+            "program": "/home/secret42/go/src/github.com/secret4233/geeorm/cmd-test/main.go",
+            "env":{
+                "GOPATH":"/home/secret42/go"
+            },
+            "showLog": true
         }
     ]
 }

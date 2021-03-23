@@ -41,7 +41,9 @@ s.Find(&users)
 */
 func (s *Session) Find(values interface{}) error {
 	destSlice := reflect.Indirect(reflect.ValueOf(values))
-	destType := destSlice.Type().Elem()
+	destType := destSlice.Type().Elem() // main.User
+	// log.Info("destSlice:", destSlice)
+	// log.Info("destType:", destType)
 	table := s.Model(reflect.New(destType).Elem().Interface()).RefTable()
 
 	s.clause.Set(clause.SELECT, table.Name, table.FieldNames)
