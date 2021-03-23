@@ -16,15 +16,17 @@ func main() {
 	engine, _ := geeorm.NewEngine("sqlite3", "gee.db")
 	defer engine.Close()
 	s := engine.NewSession()
+	s.Model(&User{})
 	_, _ = s.Raw("DROP TABLE IF EXISTS User;").Exec()
 	_, _ = s.Raw("CREATE TABLE User(Name text);").Exec()
 	_, _ = s.Raw("CREATE TABLE User(Name text);").Exec()
 	result, _ := s.Raw("INSERT INTO User(`Name`) values (?), (?)", "Tom", "Sam").Exec()
 
-	userNow := User{"Tom"}
-	if err := s.Find(&userNow); err != nil {
+	var users []User
+	if err := s.Find(&users); err != nil {
 		fmt.Printf("Error!!")
 	}
+	fmt.Printf("Users:%v\n", users)
 	count, _ := result.RowsAffected()
 	fmt.Printf("Exec success, %d affected\n", count)
 }
