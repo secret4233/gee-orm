@@ -42,3 +42,14 @@ schema.Fields[0].Tag = "PRIMARY KEY"
 数据库的连接与中断
 
 增删查改
+
+
+
+## 总体框架
+
+```mermaid
+graph LR
+A[原生sql] --> B []
+原生sql
+```
+
